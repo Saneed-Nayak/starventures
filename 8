@@ -1,0 +1,30 @@
+mkdir cherry-pick-lab
+cd cherry-pick-lab
+git init
+
+# Add remote (after creating repo on GitHub)
+git remote add origin https://github.com/USERNAME/your-repo.git
+
+echo "Initial content" > file1.txt
+git add .
+git commit -m "Initial commit with file1.txt"
+
+# Rename main branch if needed
+git branch -M main
+git push -u origin main
+
+git checkout -b dev1
+git push -u origin dev1
+
+git checkout dev1
+git pull origin dev1
+
+git checkout main
+
+# View commits and copy commit hashes
+git log --oneline --all
+
+git cherry-pick c0ffee1
+git cherry-pick d34db33
+
+git push origin main
