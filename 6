@@ -1,0 +1,17 @@
+mkdir GitWorkspace
+cd GitWorkspace
+git init
+
+echo "print('Initial commit')" > app.py
+git add app.py
+git commit -m "First commit: added app.py"
+
+git remote add origin https://github.com/USERNAME/gitworkspace.git
+git branch -M main
+git push -u origin main --force
+
+git checkout -b feature-branch
+echo "# Feature update" >> app.py
+git add app.py
+git commit -m "Updated app.py in feature branch"
+git push origin feature-branch
