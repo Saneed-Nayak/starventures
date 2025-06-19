@@ -1,0 +1,31 @@
+Create and go into new folder
+mkdir git-branch-lab
+cd git-branch-lab
+
+Initialize Git
+git init
+
+echo "This is main branch" > feature.txt
+git add feature.txt
+git commit -m "Initial commit on main branch"
+
+Create new branch
+git branch feature-branch
+
+Switch to it
+git checkout feature-branch
+
+echo "This is a new feature" > feature.txt
+git add feature.txt
+git commit -m "Added new feature in feature-branch"
+
+git checkout main
+git merge feature-branch
+
+Link to GitHub (replace your GitHub username and repo)
+git remote add origin https://github.com/USERNAME/branch-lab.git
+
+ Push main branch
+git push -u origin main
+
+git pull origin main
