@@ -1,0 +1,24 @@
+Step 1: Configure Git user info
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+ Verify config
+git config --list
+
+Step 2: Create a project folder and initialize Git
+mkdir git-lab
+cd git-lab
+git init
+
+Step 3: Create and add a file to staging
+echo "Hello Git" > hello.txt
+git add hello.txt
+
+Step 4: Commit the staged file
+git commit -m "Initial commit with hello.txt"
+
+Step 5: Check repo status
+git status
+
+Step 6: Clone a remote GitHub repo (Optional)
+git clone https://github.com/USERNAME/repository-name.git
