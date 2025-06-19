@@ -1,1 +1,32 @@
+mkdir conflict-lab
+cd conflict-lab
+git init
+
+# Create and commit initial file
+echo "Hello from main branch" > conflict.txt
+git add conflict.txt
+git commit -m "Initial commit on main branch"
+
+git checkout -b feature-branch
+
+# Overwrite the file with a new line
+echo "Change from feature branch" > conflict.txt
+git add conflict.txt
+git commit -m "Conflicting change from feature-branch"
+
+git checkout main
+
+# Now write different content in the same file (will conflict)
+echo "Change from main branch" > conflict.txt
+git add conflict.txt
+git commit -m "Conflicting change from main branch"
+
+git merge feature-branch
+#manuually
+Final resolved content after conflict
+
+git add conflict.txt
+git commit -m "Resolved merge conflict between main and feature-branch"
+
+git push origin main
 
